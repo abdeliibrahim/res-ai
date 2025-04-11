@@ -7,14 +7,14 @@ type LlamaCloudDataSourceParams = {
   };
 };
 
-export async function getIndex(params?: LlamaCloudDataSourceParams) {
+export async function getDataSource(params?: LlamaCloudDataSourceParams) {
   const { project, pipeline } = params?.llamaCloudPipeline ?? {};
   const projectName = project ?? process.env.LLAMA_CLOUD_PROJECT_NAME;
   const pipelineName = pipeline ?? process.env.LLAMA_CLOUD_INDEX_NAME;
   const apiKey = process.env.LLAMA_CLOUD_API_KEY;
   if (!projectName || !pipelineName || !apiKey) {
     throw new Error(
-      "LlamaCloud is not configured. Please set project, pipeline, and api key in the params or as environment variables.",
+      "Set project, pipeline, and api key in the params or as environment variables.",
     );
   }
   const index = new LlamaCloudIndex({

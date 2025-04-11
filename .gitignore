@@ -35,6 +35,5 @@ yarn-error.log*
 next-env.d.ts
 
 output/
-storage/
-
 .env
+cache
