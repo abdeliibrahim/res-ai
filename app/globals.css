@@ -34,6 +34,12 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
+    --color-1: 0 100% 67%;    /* Red */
+    --color-2: 217 100% 67%;  /* Blue */
+    --color-3: 272 100% 67%;  /* Purple */
+    --color-4: 155 100% 67%;  /* Green */
+    --color-5: 31 100% 67%;   /* Orange */
   }
 
   .dark {
@@ -84,15 +90,28 @@
       "calt" 1;
   }
   .background-gradient {
-    background-color: #fff;
+    background-color: #040101;
     background-image: radial-gradient(
         at 21% 11%,
-        rgba(186, 186, 233, 0.53) 0,
-        transparent 50%
+        rgba(0, 0, 0, 0.53) 0,
+        transparent 100%
       ),
-      radial-gradient(at 85% 0, hsla(46, 57%, 78%, 0.52) 0, transparent 50%),
-      radial-gradient(at 91% 36%, rgba(194, 213, 255, 0.68) 0, transparent 50%),
-      radial-gradient(at 8% 40%, rgba(251, 218, 239, 0.46) 0, transparent 50%);
+      radial-gradient(at 85% 0, hsla(0, 0%, 0%, 0.52) 0, transparent 100%),
+      radial-gradient(at 91% 36%, rgba(0, 0, 0, 0.68) 0, transparent 100%),
+      radial-gradient(at 8% 40%, rgba(20, 7, 15, 0.46) 0, transparent 100%);
+  }
+
+  /* Dark mode styles for pagination buttons */
+  .dark .bg-gray-100 {
+    @apply bg-neutral-700 text-neutral-100;
+  }
+
+  .dark .bg-white {
+    @apply bg-neutral-800 text-neutral-100;
+  }
+
+  .dark .bg-primary {
+    @apply bg-neutral-900 text-neutral-100;
   }
 
   @keyframes fadeIn {
@@ -122,5 +141,21 @@
 
   .animate-slideIn {
     animation: slideIn 0.5s ease-out;
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-rainbow {
+    animation: rainbow 8s linear infinite;
   }
 }
