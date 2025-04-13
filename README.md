@@ -2,19 +2,25 @@ This is a [LlamaIndex](https://www.llamaindex.ai/) project using [Next.js](https
 
 ## Getting Started
 
-First, install the dependencies:
+First, set up your environment variables in the `.env` file. You'll need to run the following command:
+
+```
+cp .env.example .env
+```
+
+Second, install the dependencies:
 
 ```
 npm install
 ```
 
-Second, generate the embeddings of the documents in the `./data` directory:
+Third, generate the embeddings of the documents in the `./data` directory:
 
 ```
 npm run generate
 ```
 
-Third, run the development server:
+Finally, run the development server:
 
 ```
 npm run dev
